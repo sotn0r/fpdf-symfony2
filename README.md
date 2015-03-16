@@ -1,21 +1,32 @@
 FPDF for use with Symfony2
 ==========================
 
-Uses FPDF 1.7, tested in Symfony 2.5
+Uses FPDF 1.7, tested in Symfony 2.5+
+
+## Instalation and Usage 
+
+Package available on [Composer](https://packagist.org/packages/royopa/fpdf-symfony2).
+
+If you're using Composer to manage dependencies, you can use
+
+    $ composer require "royopa/fpdf-symfony2": "dev-master"
+
+Or
+
+You can include the following in your composer.json file:
+
+```json
+{
+    "require": {
+        "royopa/fpdf-symfony2": "dev-master"
+    }
+}
+```
 
 Setup
 -----
 
-Execute the command below:
-
-composer require "royopa/fpdf-symfony2"
-
-Please provide a version constraint for the royopa/fpdf-symfony2 requirement: 
-
-enter dev-master
-
 And those to `app/autoload.php`:
-
 
 ```php
 $classMap = array(
@@ -39,4 +50,4 @@ FPDF is a PHP class which allows to generate PDF files with pure PHP, that is to
 
 - http://www.fpdf.org/
 
-On the fpdf homepage you will find links to the documenation, forums and so on.
+On the fpdf homepage you will find links to the documentation, forums and so on.
