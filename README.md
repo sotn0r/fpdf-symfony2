@@ -53,3 +53,55 @@ FPDF is a PHP class which allows to generate PDF files with pure PHP, that is to
 - http://www.fpdf.org/
 
 On the fpdf homepage you will find links to the documentation, forums and so on.
+
+
+
+Example
+-------
+
+See my `app/autoload.php`:
+
+```php
+<?php
+
+use Doctrine\Common\Annotations\AnnotationRegistry;
+use Composer\Autoload\ClassLoader;
+
+/**
+ * @var ClassLoader $loader
+ */
+$loader = require __DIR__.'/../vendor/autoload.php';
+
+AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+
+$classMap = array(
+    'Fpdf_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDF.php',
+    'Fpdi_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDI.php'
+);
+$loader->addClassMap($classMap);
+
+return $loader;
+
+```
+
+And My Cyntroller:
+
+```php
+<?php
+
+namespace Acme\DemoBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class WelcomeController extends Controller
+{
+    public function indexAction()
+    {
+        $pdf  = new \FPDF_FPDF();
+        $pdi  = new \FPDF_FPDI();
+
+        //my code...
+    }
+}
+
+```
