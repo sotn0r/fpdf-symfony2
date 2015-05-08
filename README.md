@@ -84,7 +84,7 @@ return $loader;
 
 ```
 
-And My Cyntroller:
+And My Controller:
 
 ```php
 <?php
