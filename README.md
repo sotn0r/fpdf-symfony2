@@ -41,12 +41,6 @@ $loader->addClassMap($classMap);
 Usage
 -----
 ```php
-<?php
-
-namespace Acme\DemoBundle\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 class WelcomeController extends Controller
 {
     public function indexAction()
