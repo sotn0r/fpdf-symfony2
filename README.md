@@ -40,10 +40,27 @@ $loader->addClassMap($classMap);
 
 Usage
 -----
-
 ```php
-  $pdf  = new \FPDF_FPDF();
-  $pdi  = new \FPDF_FPDI();	
+<?php
+
+namespace Acme\DemoBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class WelcomeController extends Controller
+{
+    public function indexAction()
+    {
+        $pdf  = new \FPDF_FPDF();
+        $pdi  = new \FPDF_FPDI();
+
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',16);
+        $pdf->Cell(40,10,'Hello World!');
+        $pdf->Output();
+    }
+}
+
 ```
 
 FPDF
