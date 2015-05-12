@@ -32,8 +32,8 @@ And those to `app/autoload.php`:
 
 ```php
 $classMap = array(
-    'Fpdf_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDF.php',
-    'Fpdi_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDI.php'
+    'FPDF_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDF.php',
+    'FPDI_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDI.php'
 );
 $loader->addClassMap($classMap);    
 ```
@@ -86,8 +86,8 @@ $loader = require __DIR__.'/../vendor/autoload.php';
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
 $classMap = array(
-    'Fpdf_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDF.php',
-    'Fpdi_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDI.php'
+    'FPDF_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDF.php',
+    'FPDI_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDI.php'
 );
 $loader->addClassMap($classMap);
 
