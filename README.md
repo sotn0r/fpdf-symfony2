@@ -11,19 +11,7 @@ Package available on [Composer](https://packagist.org/packages/royopa/fpdf-symfo
 
 If you're using Composer to manage dependencies, you can use
 
-    $ composer require "royopa/fpdf-symfony2": "dev-master"
-
-Or
-
-You can include the following in your composer.json file:
-
-```json
-{
-    "require": {
-        "royopa/fpdf-symfony2": "dev-master"
-    }
-}
-```
+    composer require "royopa/fpdf-symfony2"
 
 Setup
 -----
@@ -64,8 +52,6 @@ FPDF is a PHP class which allows to generate PDF files with pure PHP, that is to
 - http://www.fpdf.org/
 
 On the fpdf homepage you will find links to the documentation, forums and so on.
-
-
 
 Example
 -------
