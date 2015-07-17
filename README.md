@@ -13,7 +13,9 @@ Package available on [Composer](https://packagist.org/packages/royopa/fpdf-symfo
 
 If you're using Composer to manage dependencies, you can use
 
-    composer require "royopa/fpdf-symfony2"
+```sh
+composer require royopa/fpdf-symfony2:dev-master
+```
 
 Setup
 -----
