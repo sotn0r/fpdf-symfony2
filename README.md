@@ -1,7 +1,7 @@
 FPDF for use with Symfony
 =========================
 
-Uses FPDF 1.8.1, tested in Symfony 3+
+Uses FPDF 1.8.1, tested in Symfony 2+ and 3+
 
 [![Build Status](https://travis-ci.org/royopa/fpdf-symfony2.svg?branch=master)](https://travis-ci.org/royopa/fpdf-symfony2)
 [![Latest Stable Version](https://poser.pugx.org/royopa/fpdf-symfony2/v/stable.svg)](https://packagist.org/packages/royopa/fpdf-symfony2) [![Total Downloads](https://poser.pugx.org/royopa/fpdf-symfony2/downloads.svg)](https://packagist.org/packages/royopa/fpdf-symfony2) [![Latest Unstable Version](https://poser.pugx.org/royopa/fpdf-symfony2/v/unstable.svg)](https://packagist.org/packages/royopa/fpdf-symfony2) [![License](https://poser.pugx.org/royopa/fpdf-symfony2/license.svg)](https://packagist.org/packages/royopa/fpdf-symfony2)
@@ -14,7 +14,7 @@ Package available on [Composer](https://packagist.org/packages/royopa/fpdf-symfo
 If you're using Composer to manage dependencies, you can use
 
 ```sh
-composer require royopa/fpdf-symfony2:2.0
+composer require royopa/fpdf-symfony2
 ```
 
 Usage
