@@ -1,7 +1,7 @@
-FPDF for use with Symfony2
-==========================
+FPDF for use with Symfony
+=========================
 
-Uses FPDF 1.7, tested in Symfony 2.5+
+Uses FPDF 1.8.1, tested in Symfony 3+
 
 [![Build Status](https://travis-ci.org/royopa/fpdf-symfony2.svg?branch=master)](https://travis-ci.org/royopa/fpdf-symfony2)
 [![Latest Stable Version](https://poser.pugx.org/royopa/fpdf-symfony2/v/stable.svg)](https://packagist.org/packages/royopa/fpdf-symfony2) [![Total Downloads](https://poser.pugx.org/royopa/fpdf-symfony2/downloads.svg)](https://packagist.org/packages/royopa/fpdf-symfony2) [![Latest Unstable Version](https://poser.pugx.org/royopa/fpdf-symfony2/v/unstable.svg)](https://packagist.org/packages/royopa/fpdf-symfony2) [![License](https://poser.pugx.org/royopa/fpdf-symfony2/license.svg)](https://packagist.org/packages/royopa/fpdf-symfony2)
@@ -17,19 +17,6 @@ If you're using Composer to manage dependencies, you can use
 composer require royopa/fpdf-symfony2
 ```
 
-Setup
------
-
-And those to `app/autoload.php`:
-
-```php
-$classMap = array(
-    'FPDF_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDF.php',
-    'FPDI_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDI.php'
-);
-$loader->addClassMap($classMap);    
-```
-
 Usage
 -----
 ```php
@@ -37,13 +24,15 @@ class WelcomeController extends Controller
 {
     public function indexAction()
     {
-        $pdf  = new \FPDF_FPDF();
-        $pdi  = new \FPDF_FPDI();
+        $pdf = new \FPDF();
 
         $pdf->AddPage();
         $pdf->SetFont('Arial','B',16);
         $pdf->Cell(40,10,'Hello World!');
-        $pdf->Output();
+
+        return new Response($pdf->Output(), 200, array(
+            'Content-Type' => 'application/pdf'));
+        }
     }
 }
 
@@ -60,49 +49,34 @@ On the fpdf homepage you will find links to the documentation, forums and so on.
 Example
 -------
 
-See my `app/autoload.php`:
+My Controller:
 
 ```php
 <?php
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
-use Composer\Autoload\ClassLoader;
+namespace AppBundle\Controller;
 
-/**
- * @var ClassLoader $loader
- */
-$loader = require __DIR__.'/../vendor/autoload.php';
-
-AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
-
-$classMap = array(
-    'FPDF_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDF.php',
-    'FPDI_' => __DIR__.'/../vendor/royopa/fpdf-symfony2/lib/FPDF/FPDI.php'
-);
-$loader->addClassMap($classMap);
-
-return $loader;
-
-```
-
-And My Controller:
-
-```php
-<?php
-
-namespace Acme\DemoBundle\Controller;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-class WelcomeController extends Controller
+
+class DefaultController extends Controller
 {
-    public function indexAction()
+    /**
+     * @Route("/", name="homepage")
+     */
+    public function indexAction(Request $request)
     {
-        $pdf  = new \FPDF_FPDF();
-        $pdi  = new \FPDF_FPDI();
+        $pdf = new \FPDF();
 
-        //my code...
-    }
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',16);
+        $pdf->Cell(40,10,'Hello World!');
+
+        return new Response($pdf->Output(), 200, array(
+            'Content-Type' => 'application/pdf'));
+        }
 }
-
 ```
