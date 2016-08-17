@@ -32,7 +32,6 @@ class WelcomeController extends Controller
 
         return new Response($pdf->Output(), 200, array(
             'Content-Type' => 'application/pdf'));
-        }
     }
 }
 
