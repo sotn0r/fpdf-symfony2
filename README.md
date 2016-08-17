@@ -14,7 +14,7 @@ Package available on [Composer](https://packagist.org/packages/royopa/fpdf-symfo
 If you're using Composer to manage dependencies, you can use
 
 ```sh
-composer require royopa/fpdf-symfony2:2.1
+composer require royopa/fpdf-symfony2:2.0
 ```
 
 Usage
