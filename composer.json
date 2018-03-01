@@ -4,7 +4,7 @@
     "description": "fpdf vendor for use with symfony2, based on toooni/fpdf",
     "keywords": [],
     "homepage": "http://github.com/royopa",
-    "license": "BSD-3",
+    "license": "MIT",
 	"authors": [
         {
             "name": "Rodrigo Prado de Jesus",
@@ -13,8 +13,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "setasign/fpdi-fpdf": "1.6.1",
-        "setasign/fpdi": "1.6.1"
+        "setasign/fpdi-fpdf": "~1.6",
+        "setasign/fpdi": "~1.6"
     },
     "require-dev": {
         "phpunit/phpunit": "4.0.*"
