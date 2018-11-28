@@ -1,20 +1,20 @@
 {
     "name": "royopa/fpdf-symfony2",
     "type": "library",
-    "description": "fpdf vendor for use with symfony2, based on toooni/fpdf",
+    "description": "fpdf vendor for use with symfony2, based on royopa/fpdf-symfony2",
     "keywords": [],
-    "homepage": "http://github.com/royopa",
+    "homepage": "http://github.com/sotn0r",
     "license": "MIT",
 	"authors": [
         {
-            "name": "Rodrigo Prado de Jesus",
-            "email": "royopa@gmail.com"
+            "name": "sotn0r",
+            "email": "sotn0r@message-me-on-github.com"
         }
     ],
     "require": {
         "php": ">=5.3.3",
-        "setasign/fpdi-fpdf": "~1.6",
-        "setasign/fpdi": "~1.6"
+        "setasign/fpdi-fpdf": "~2.1.0",
+        "setasign/fpdi": "~2.1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "4.0.*"
